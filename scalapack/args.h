@@ -34,7 +34,7 @@ vector<Arg *> argptrs;
 
 void arg_usage(string cmd) {
     cout << "Usage: " << cmd;
-    for( int i = 0; i < argnames.size(); i++ ) {
+    for( unsigned int i = 0; i < argnames.size(); i++ ) {
         cout << " [" << argnames[i] << "]";
     }
     cout << endl;
@@ -47,12 +47,12 @@ void arg( string name, int *p_value ) {
 }
 
 void args( int argc, char *argv[] ) {
-    if( argc - 1 != argnames.size() ) {
+    if( (unsigned int)(argc - 1) != argnames.size() ) {
         arg_usage(argv[0]);
     }
-    for( int i = 0; i < argnames.size(); i++ ) {
+    for( unsigned int i = 0; i < argnames.size(); i++ ) {
         argptrs[i]->assign( argv[i+1] );
-        cout << argnames[i] << ": " << (*argptrs[i]) << endl;
+      //  cout << argnames[i] << ": " << (*argptrs[i]) << endl;
     }
 }
 

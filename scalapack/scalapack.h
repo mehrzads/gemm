@@ -27,6 +27,8 @@ extern "C" {
     void pdgemm_( char *transa, char *transb, int *m, int *n, int *k, double *alpha,
          double *a, int *ia, int *ja, struct DESC *desca, double *b, int *ib, int *jb,
         struct DESC *descb, double *beta, double *c, int *ic, int *jc, struct DESC *descc );
+    void Cdgesd2d(int icontxt, int m, int n, double * A, int lda, int rsrc, int csrc);
+    void Cdgerv2d(int icontxt, int m, int n, double *A, int lda, int rsrc, int csrc);
 }
 
 void blacs_pinfo( int *p, int *P ) {
