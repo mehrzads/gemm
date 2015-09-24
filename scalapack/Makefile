@@ -1,5 +1,4 @@
-export OPENBLAS_NUM_THREADS=2
-CC=mpic++.mpich2
+CC=mpic++.mpich2 
 CFLAGS=-c -Wall -std=c++11 
 LDFLAGS= -L../../scalapackInstall/scalapack-2.0.2/ -lscalapack -L/opt/OpenBLAS/lib -lopenblas -lm -L/usr/lib/gcc/x86_64-linux-gnu/4.8/ -lgfortran
 SOURCES= $(wildcard *.cpp) 

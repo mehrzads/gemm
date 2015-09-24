@@ -145,7 +145,9 @@ int main( int argc, char *argv[] ) {
    
       if (myrow == sendr)
 	  recvr = (recvr+nr)%mp;
-    }
+    } 
+
+//    Cpdgemr2d(n, n, Aseq, 0, 0, &descA_1x1, Apar, 0, 0, &descA_PxQ, grid); 
 
     MPI_Barrier( MPI_COMM_WORLD );
 

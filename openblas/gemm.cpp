@@ -32,10 +32,10 @@ int main(int argc, char **argv) {
     C_ref[i] = 0;
   }
   printf("%s\n", openblas_get_config());
-  openblas_set_num_threads(2);
+  openblas_set_num_threads(8);
   auto start_time =  std::chrono::steady_clock::now(); 
             /* row_order      transform     transform     rowsA colsB K  alpha  a  lda  b  ldb beta c   ldc */
-  cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans, N,    N,    N, 1.0,   A,   N, B, N,  0.0, C,  N);
+  cblas_dgemm(CblasColMajor, CblasNoTrans, CblasNoTrans, N,    N,    N, 1.0,   A,   N, B, N,  0.0, C,  N);
   auto end_time =  std::chrono::steady_clock::now(); 
 
   printf("blas takes %f Seconds\n", std::chrono::duration_cast<std::chrono::milliseconds> (end_time - start_time).count() / 1000.0);
